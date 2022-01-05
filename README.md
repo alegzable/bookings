@@ -6,7 +6,7 @@ In order to run the app locally, run these commands:
 
     yarn add global json-server
     yarn install
-    json-server db.json
+    yarn json-server db.json
     yarn start
 
 ### Description
