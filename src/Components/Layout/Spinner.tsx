@@ -1,0 +1,35 @@
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ReactElement } from "react";
+import styled from "styled-components";
+
+const AnimatedSpinner = styled(FontAwesomeIcon)`
+	font-size: 2.4rem;
+	transform: translate(-50%, -50%);
+	animation: rotation 1s infinite linear;
+
+	@keyframes rotation {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+`;
+
+const SpinnerContainer = styled.div`
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const Spinner = (): ReactElement => (
+	<SpinnerContainer data-testid={testId}>
+		<AnimatedSpinner icon={faSpinner} />
+	</SpinnerContainer>
+);
+
+export const testId = "spinner";
+export default Spinner;
